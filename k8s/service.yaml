@@ -9,5 +9,5 @@ spec:
     - protocol: TCP
       port: 8089
       targetPort: 4499
-      nodePort: 80   # External port on the node (you can choose any unused port)
+      nodePort: 31679   # External port on the node (you can choose any unused port)
   type: NodePort
