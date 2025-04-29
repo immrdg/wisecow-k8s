@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wisecow-deployment
+spec:
+  selector:
+    app: wisecow
+  ports:
+    - protocol: TCP
+      port: 8089
+      targetPort: 4499
+      nodePort: 80   # External port on the node (you can choose any unused port)
+  type: NodePort

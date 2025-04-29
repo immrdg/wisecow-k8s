@@ -20,6 +20,7 @@ cat <<EOF > $RSPFILE
 HTTP/1.1 200
 
 
+<p> Request Served By $(hostname) </p>
 <pre>`cowsay $mod`</pre>
 EOF
 }
