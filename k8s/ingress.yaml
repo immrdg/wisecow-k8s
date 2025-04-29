@@ -15,7 +15,7 @@ spec:
     - host: wisecow.immrdg.online
       http:
         paths:
-          - path: /
+          - path: /.well-known/acme-challenge/
             pathType: Prefix
             backend:
               service:
