@@ -7,7 +7,7 @@ spec:
     app: wisecow
   ports:
     - protocol: TCP
-      port: 8089
+      port: 80
       targetPort: 4499
       nodePort: 31679   # External port on the node (you can choose any unused port)
   type: LoadBalancer
