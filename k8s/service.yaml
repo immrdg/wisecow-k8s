@@ -10,11 +10,13 @@ spec:
   selector:
     app: wisecow
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 80
       targetPort: 4499
       nodePort: 31679   # External port on the node (you can choose any unused port)
-    - protocol: TCP
+    - name: https
+      protocol: TCP
       port: 443
       targetPort: 4499
       nodePort: 31680
