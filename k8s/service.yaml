@@ -2,6 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: wisecow-deployment
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:us-east-1:751762548634:certificate/1854cbe6-e221-4f90-b52d-958e49306e85"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
 spec:
   selector:
     app: wisecow
@@ -10,4 +14,4 @@ spec:
       port: 80
       targetPort: 4499
       nodePort: 31679   # External port on the node (you can choose any unused port)
-  type: ClusterIP
+  type: LoadBalancer

@@ -1,8 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wisecow-nginx
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: wisecow
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: wisecow-ingress
   annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-1:751762548634:certificate/1854cbe6-e221-4f90-b52d-958e49306e85"
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/actions.ssl-redirect: |
